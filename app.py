@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Import required modules
 from flask import Flask, render_template, request, redirect, url_for
 import os
@@ -239,7 +238,6 @@ def vip_login():
 # Run the Flask App
 if __name__ == "__main__":
     app.run(debug=True)
-=======
 # Import required modules
 from flask import Flask, render_template, request, redirect, url_for
 import os
@@ -479,5 +477,6 @@ def vip_login():
 
 # Run the Flask App
 if __name__ == "__main__":
-    app.run(debug=True)
->>>>>>> 6a5dff4 (Initial commit - Added all project files)
+    from waitress import server 
+    serve(app, host="0.0.0.0",
+    port=8080)
