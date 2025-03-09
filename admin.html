@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel - VIP & Donations</h1>
+        <nav>
+            <a href="/logout" class="button">Logout</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>VIP Registrations</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>VIP Level</th>
+                <th>Gift Card</th>
+            </tr>
+            {% for member in members %}
+            <tr>
+                <td>{{ member[1] }}</td>
+                <td>{{ member[2] }}</td>
+                <td>VIP {{ member[3] }}</td>
+                <td><img src="{{ member[5] }}" width="100"></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Donations</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gift Card</th>
+            </tr>
+            {% for donation in donations %}
+            <tr>
+                <td>{{ donation[1] }}</td>
+                <td>{{ donation[2] }}</td>
+                <td><img src="{{ donation[4] }}" width="100"></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</body>
+</html>
