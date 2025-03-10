@@ -25,13 +25,12 @@
 
         <!-- Displaying the gift card image dynamically -->
         {% if row and 'gift_card' in row and row['gift_card'] %}
-            <img src="{{ url_for('uploaded_file', filename=row['gift_card']) }}" alt="Gift Card">
-            {% if gift_card %}
+            <img src="{{ url_for('uploaded_file', filename=row['gift_card']) }}" alt="Gift Card" class="gift-card">
+        {% elif gift_card %}
             <img src="{{ url_for('uploaded_file', filename=gift_card) }}" class="gift-card" alt="Gift Card">
         {% else %}
             <p class="no-gift-card">Upload Your Gift Card to Get Started</p>
         {% endif %}
-        
     </header>
     
     <section id="membership">
