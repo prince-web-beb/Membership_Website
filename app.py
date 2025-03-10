@@ -480,3 +480,11 @@ if __name__ == "__main__":
     from waitress import server 
     serve(app, host="0.0.0.0",
     port=8080)
+    from flask import Flask, send_from_directory
+
+app = Flask(__name__)
+
+# Serve uploaded images
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    return send_from_directory('uploads', filename)

@@ -1,0 +1,22 @@
+{
+    "name": "Membership Website",
+    "short_name": "VIP Club",
+    "description": "VIP Membership and Registration App",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2196F3",
+    "icons": [
+      {
+        "src": "/static/icons/icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/static/icons/icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  
