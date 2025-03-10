@@ -6,6 +6,7 @@ body {
     background-size: cover;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 /* Dark overlay for better readability */
@@ -24,6 +25,7 @@ body::before {
 .logo {
     width: 120px;
     margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
 }
 
 /* Header */
@@ -33,16 +35,22 @@ header {
     padding: 20px;
     font-size: 24px;
     font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
 }
 
 /* Sections */
 section {
     margin: 20px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
     width: 50%;
+    transition: transform 0.3s;
+}
+
+section:hover {
+    transform: scale(1.02);
 }
 
 /* VIP List */
@@ -53,6 +61,7 @@ ul {
 
 ul li {
     margin: 10px 0;
+    font-size: 18px;
 }
 
 /* Links */
@@ -70,23 +79,24 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Button Styling */
+/* Buttons */
 .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #007BFF;
     color: white;
     font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
-/* Form Styling */
+/* Forms */
 form {
     display: flex;
     flex-direction: column;
@@ -97,6 +107,11 @@ form {
     box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
     width: 40%;
     margin: auto;
+    transition: transform 0.3s;
+}
+
+form:hover {
+    transform: scale(1.01);
 }
 
 form label {
@@ -110,21 +125,92 @@ form input {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border 0.3s;
+}
+
+form input:focus {
+    border: 1px solid #007BFF;
+    outline: none;
 }
 
 form button {
     background-color: #007BFF;
     color: white;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
 }
 
 form button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Tables (Admin Panel) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background: #007BFF;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tr:hover {
+    background: #f1f1f1;
+}
+
+/* Gift Card Image */
+.gift-card {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.gift-card:hover {
+    transform: scale(1.1);
+}
+
+/* No Gift Card Available */
+.no-gift-card {
+    font-size: 18px;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    background: rgba(34, 34, 34, 0.8);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Responsive Design */
@@ -135,5 +221,13 @@ form button:hover {
 
     form {
         width: 80%;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .gift-card {
+        width: 100px;
     }
 }
